@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+enum SensorValidity {
+    INVALID = 0;
+    VALID = 1;
+}
+
+message TemperatureSensor {
+    required float TemperatureDegC = 1;
+    required SensorValidity Validity = 2;
+}
+
+message HumiditySensor {
+    required float RelativeHumidity = 1;
+    required SensorValidity Validity = 2;
+}
+
+message NodeStats {
+    required TemperatureSensor TempSense = 1;
+    required HumiditySensor HumiditySense = 2;
+}
