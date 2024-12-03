@@ -5,25 +5,11 @@ enum SensorValidity {
     VALID = 1;
 }
 
-message TDSSensor {
-    required float TDSSensePPM = 1;
-    required float analogVoltage = 2;
-    required SensorValidity Validity = 3;
-}
-
-message pHSensor {
-    required float phSenseMolPerL = 1;
-    required float analogVoltage = 2;
-    required SensorValidity Validity = 3;
-}
-
 message WaterFlowSensor {
     required float WaterFlowLpM = 1;
     required SensorValidity Validity = 2;
 }
 
 message MixingTankStats {
-    required TDSSensor TDSSense = 1;
-    required pHSensor pHSense = 2;
-    required WaterFlowSensor WaterFlowSense = 3;
+    required WaterFlowSensor WaterFlowSense = 1;
 }

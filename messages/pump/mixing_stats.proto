@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+enum SensorValidity {
+    INVALID = 0;
+    VALID = 1;
+}
+
+message TDSSensor {
+    required float TDSSensePPM = 1;
+    required float analogVoltage = 2;
+    required SensorValidity Validity = 3;
+}
+
+message pHSensor {
+    required float phSenseMolPerL = 1;
+    required float analogVoltage = 2;
+    required SensorValidity Validity = 3;
+}
+
+message MixingTankStats {
+    required TDSSensor TDSSense = 1;
+    required pHSensor pHSense = 2;
+}
