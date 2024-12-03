@@ -1,5 +1,5 @@
 import os
-
+import argparse
 
 def main(message_directory: str, nanopb_generator_path: str, output_dir: str):
     # gather all the .proto files in the message directory, with the full path. Do so recursively.
@@ -29,9 +29,21 @@ def main(message_directory: str, nanopb_generator_path: str, output_dir: str):
 
 
 if __name__ == "__main__":
-    message_directory = "messages"
-    nanopb_generator_path = "submodules/nanopb/generator/nanopb_generator.py"
-    output_dir = "generated"
+    nanopb_generator_path = "../submodules/nanopb/generator/nanopb_generator.py"
+    # make the nanopb generator path relative to the script
+    nanopb_generator_path = os.path.join(
+        os.path.dirname(os.path.realpath(__file__)), nanopb_generator_path
+    )
+    
+    # add an argument parser for the output directory
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output_dir", type=str, default="generated")
+    parser.add_argument("--message_directory", type=str, default="messages")
+    args = parser.parse_args()
+
+    output_dir = args.output_dir
+    message_directory = args.message_directory
+
     # make the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
     # make the __init__.py file in the output directory
