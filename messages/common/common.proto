@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+enum MessageChannels {
+    MIXING_STATS = 0;
+}
+
+message MessageHeader {
+    required MessageChannels channel = 1;
+    required fixed64 timestamp = 2;
+    required fixed32 length = 3;
+}
