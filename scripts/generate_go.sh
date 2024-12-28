@@ -2,6 +2,7 @@
 
 # grab the latest protoc
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # make the generated folder if it doesnt already exist
 mkdir -p generated
