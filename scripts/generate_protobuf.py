@@ -36,7 +36,10 @@ def main(message_directory: str, nanopb_generator_path: str, output_dir: str):
         
 
     print(f"{nanopb_generator_path} {' '.join(nanopb_args)}")
-    os.system(f"{nanopb_generator_path} {' '.join(nanopb_args)}")
+    return_code = os.system(f"{nanopb_generator_path} {' '.join(nanopb_args)}")
+
+    if return_code != 0:
+        raise Exception("Failed to generate nanopb files")
 
 
 if __name__ == "__main__":
