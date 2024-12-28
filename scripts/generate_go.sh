@@ -1,6 +1,17 @@
 #!/bin/sh
 
-# grab the latest protoc
+# Check if the system is macOS
+if [ "$(uname)" = "Darwin" ]; then
+    echo "you are on mac, run 'brew install protobuf'"
+# Check if the system is Linux
+elif [ "$(uname)" = "Linux" ]; then
+    echo "on linux, installing protobuf compiler"
+    apt install -y protobuf-compiler # this is protoc
+else
+    echo "You are on an unsupported OS"
+fi
+
+# protoc needs this to build go code
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 export PATH="$PATH:$(go env GOPATH)/bin"
 
