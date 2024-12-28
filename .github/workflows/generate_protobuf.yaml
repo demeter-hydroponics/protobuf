@@ -28,5 +28,7 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '1.22.x'
+      - name: installing protoc
+        run: sudo apt install -y protobuf-compiler
       - name: Generate protobuf files
         run: ./scripts/generate_go.sh
