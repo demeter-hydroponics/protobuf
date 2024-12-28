@@ -1,4 +1,5 @@
 import os
+import shutil
 import argparse
 
 def main(message_directory: str, nanopb_generator_path: str, output_dir: str):
@@ -8,22 +9,32 @@ def main(message_directory: str, nanopb_generator_path: str, output_dir: str):
         for file in files:
             if file.endswith(".proto"):
                 proto_files.append(os.path.join(root, file))
+    DIR_OUTPUT_PATHS = {
+        "c": f"{output_dir}/c",
+        "python": f"{output_dir}/python",
+    }
 
-    c_output_dir = f"{output_dir}/c"
-
-    # remove the output directories if they exist
-    os.system(f"rm -rf {c_output_dir}")
-
-    # Make the output directories
-    os.makedirs(c_output_dir, exist_ok=True)
+    for path in DIR_OUTPUT_PATHS.values():
+        shutil.rmtree(path, ignore_errors=True)
+        os.makedirs(path)
 
     # generate the .c/.h files from the .proto files with nanopb
     nanopb_args = [
         *proto_files,
         "-D",
-        c_output_dir,
-        "",
+        DIR_OUTPUT_PATHS["c"],
     ]
+
+    protoc_args = []
+
+    if args.generate_python:
+        protoc_args.append(f"--python_out={DIR_OUTPUT_PATHS['python']}")
+
+    if protoc_args:
+        protoc_arg_str = " ".join(protoc_args)
+        nanopb_args.append(f'--protoc-opt="{protoc_arg_str}"')
+        
+
     print(f"{nanopb_generator_path} {' '.join(nanopb_args)}")
     os.system(f"{nanopb_generator_path} {' '.join(nanopb_args)}")
 
@@ -39,6 +50,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output_dir", type=str, default="generated")
     parser.add_argument("--message_directory", type=str, default="messages")
+    parser.add_argument("--generate_python", action="store_true")
     args = parser.parse_args()
 
     output_dir = args.output_dir
