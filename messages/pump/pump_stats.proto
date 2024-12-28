@@ -1,6 +1,6 @@
 syntax = "proto2";
 import "common/common.proto";
-option go_package = "base-station/protobuf/generated/pump";
+option go_package = "base-station/protobuf/generated/go/pump";
 
 
 message WaterFlowSensor {

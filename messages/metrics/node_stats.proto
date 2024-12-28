@@ -1,6 +1,6 @@
 syntax = "proto2";
 import "common/common.proto";
-option go_package = "base-station/protobuf/generated/metrics";
+option go_package = "base-station/protobuf/generated/go/metrics";
 
 message TemperatureSensor {
     required float TemperatureDegC = 1;

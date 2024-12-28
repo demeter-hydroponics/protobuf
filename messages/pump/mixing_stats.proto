@@ -1,5 +1,5 @@
 syntax = "proto2";
-option go_package = "base-station/protobuf/generated/mixing";
+option go_package = "base-station/protobuf/generated/go/mixing";
 import "common/common.proto";
 
 message TDSSensor {
