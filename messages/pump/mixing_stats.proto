@@ -1,9 +1,6 @@
 syntax = "proto2";
 
-enum SensorValidity {
-    INVALID = 0;
-    VALID = 1;
-}
+import "common.proto";
 
 message TDSSensor {
     required float TDSSensePPM = 1;
