@@ -5,10 +5,12 @@ import argparse
 def main(message_directory: str, nanopb_generator_path: str, output_dir: str):
     # gather all the .proto files in the message directory, with the full path. Do so recursively.
     proto_files = []
-    for root, _, files in os.walk(message_directory):
+    os.chdir(message_directory)
+    for root, _, files in os.walk("."):
         for file in files:
             if file.endswith(".proto"):
                 proto_files.append(os.path.join(root, file))
+    
     DIR_OUTPUT_PATHS = {
         "c": f"{output_dir}/c",
         "python": f"{output_dir}/python",

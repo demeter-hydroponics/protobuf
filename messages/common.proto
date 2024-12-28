@@ -1,5 +1,10 @@
 syntax = "proto2";
 
+enum SensorValidity {
+    INVALID = 0;
+    VALID = 1;
+}
+
 enum MessageChannels {
     MIXING_STATS = 0;
     NODE_STATS = 1;
