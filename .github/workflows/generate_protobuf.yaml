@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 jobs:
-  generator-unit-tests:
+  embedded-generator-unit-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 
@@ -18,3 +18,17 @@ jobs:
         run: python3 scripts/setup.py --skip-upgrade
       - name: Generate protobuf files
         run: python3 scripts/generate_protobuf.py
+  golang-generator-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: Setup Go 1.22.x
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.x'
+      - name: installing protoc
+        run: sudo apt install -y protobuf-compiler
+      - name: Generate protobuf files
+        run: ./scripts/generate_go.sh
