@@ -1,9 +1,6 @@
 syntax = "proto2";
-
-enum SensorValidity {
-    INVALID = 0;
-    VALID = 1;
-}
+import "common/common.proto";
+option go_package = "base-station/protobuf/generated/metrics";
 
 message TemperatureSensor {
     required float TemperatureDegC = 1;

@@ -3,4 +3,11 @@
 # grab the latest protoc
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 
-protoc --proto_path=src --go_out=out --go_opt=paths=source_relative foo.proto bar/baz.proto
+# make the generated folder if it doesnt already exist
+mkdir ../generated
+
+protoc \
+--proto_path=../messages \
+--go_out=../generated \
+--go_opt=paths=source_relative \
+metrics/node_stats.proto common/common.proto pump/pump_stats.proto pump/mixing_stats.proto
