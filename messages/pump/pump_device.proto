@@ -18,5 +18,5 @@ message BinaryLoadStats {
 message PumpTankStats {
     required BinaryLoadStats primary_pump = 1;
     required BinaryLoadStats secondary_pump = 2;
-    required BinaryLoadStats water_value = 3;
+    required BinaryLoadStats water_valve = 3;
 }
