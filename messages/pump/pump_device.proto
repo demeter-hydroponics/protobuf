@@ -11,7 +11,8 @@ enum BinaryLoadState {
 message BinaryLoadStats {
     required BinaryLoadState state = 1;
     required float current = 2;
-    required bool faulted = 3;
+    required SensorValidity current_valid = 3;
+    required bool faulted = 4;
 }
 
 message PumpTankStats {

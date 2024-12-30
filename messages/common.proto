@@ -9,6 +9,7 @@ enum SensorValidity {
 enum MessageChannels {
     MIXING_STATS = 0;
     NODE_STATS = 1;
+    PUMP_STATS = 2;
 }
 
 message MessageHeader {
