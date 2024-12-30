@@ -1,0 +1,21 @@
+syntax = "proto2";
+option go_package = "base-station/protobuf/generated/go/pump";
+
+import "common.proto";
+
+enum BinaryLoadState {
+    DISABLED = 0;
+    ENABLED = 1;
+}
+
+message BinaryLoadStats {
+    required BinaryLoadState state = 1;
+    required float current = 2;
+    required bool faulted = 3;
+}
+
+message PumpTankStats {
+    required BinaryLoadStats primary_pump = 1;
+    required BinaryLoadStats secondary_pump = 2;
+    required BinaryLoadStats water_value = 3;
+}

@@ -11,4 +11,4 @@ protoc \
 --proto_path=messages \
 --go_out=generated/go \
 --go_opt=paths=source_relative \
-metrics/node_stats.proto common.proto pump/pump_stats.proto pump/mixing_stats.proto
+metrics/node_stats.proto common.proto pump/pump_device.proto pump/mixing_stats.proto
