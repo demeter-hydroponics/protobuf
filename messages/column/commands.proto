@@ -28,5 +28,5 @@ enum PumpType {
 
 message SetPumpStateCommand {
     required PumpType SelectedPump  = 1;
-    required PumpState State  = 1;
+    required PumpState State  = 2;
 }
