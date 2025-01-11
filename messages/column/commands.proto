@@ -1,4 +1,19 @@
 syntax = "proto2";
 option go_package = "base-station/protobuf/generated/go/column";
 
-import "common.proto";
+//import "common.proto";
+
+
+message PumpScheduleCommand {
+    required uint32 TimeOnSeconds = 1;
+    required uint32 PeriodSeconds = 2;
+}
+
+enum PumpState {
+    PUMP_ON = 0;
+    PUMP_OFF = 1;
+}
+
+message PumpOverrideCommand {
+    required PumpState State  = 1;
+}
