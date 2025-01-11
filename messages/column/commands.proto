@@ -1,4 +1,32 @@
 syntax = "proto2";
 option go_package = "base-station/protobuf/generated/go/column";
 
-import "common.proto";
+//import "common.proto";
+
+
+message PumpUpdateScheduleCommand {
+    required uint32 OnTimeSeconds = 1;
+    required uint32 PeriodSeconds = 2;
+}
+
+enum PumpState {
+    PUMP_OFF = 0;
+    PUMP_ON = 1;
+    PUMP_SCHEDULE = 2;
+}
+
+enum PumpType {
+    PRIMARY = 0;
+    SECONDARY = 1;
+    BOTH = 2;
+}
+
+// if you set SelectedPump to PRIMARY and state to ON, then SECONDARY must be off
+// if SelectedPump is BOTH, then turn both on or off.
+// if State is SCHEDULE, then assume the Column Controller will run both on schedule
+// base station will set SelectedPump to both though
+
+message SetPumpStateCommand {
+    required PumpType SelectedPump  = 1;
+    required PumpState State  = 2;
+}
