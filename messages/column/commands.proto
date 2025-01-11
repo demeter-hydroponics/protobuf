@@ -5,7 +5,7 @@ option go_package = "base-station/protobuf/generated/go/column";
 
 
 message PumpScheduleCommand {
-    required uint32 TimeOnSeconds = 1;
+    required uint32 OnTimeSeconds = 1;
     required uint32 PeriodSeconds = 2;
 }
 
