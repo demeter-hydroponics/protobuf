@@ -10,8 +10,8 @@ message PumpScheduleCommand {
 }
 
 enum PumpState {
-    PUMP_ON = 0;
-    PUMP_OFF = 1;
+    PUMP_OFF = 0;
+    PUMP_ON = 1;
 }
 
 message PumpOverrideCommand {
