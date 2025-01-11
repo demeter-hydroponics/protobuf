@@ -1,0 +1,4 @@
+syntax = "proto2";
+option go_package = "base-station/protobuf/generated/go/column";
+
+import "common.proto";

@@ -11,4 +11,6 @@ protoc \
 --proto_path=messages \
 --go_out=generated/go \
 --go_opt=paths=source_relative \
-metrics/node_stats.proto common.proto pump/pump_device.proto pump/mixing_stats.proto
+common.proto \
+node/metrics.proto node/commands.proto \
+column/pump_metrics.proto column/mixing_metrics.proto column/commands.proto

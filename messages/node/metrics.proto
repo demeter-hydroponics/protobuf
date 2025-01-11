@@ -1,5 +1,5 @@
 syntax = "proto2";
-option go_package = "base-station/protobuf/generated/go/metrics";
+option go_package = "base-station/protobuf/generated/go/node";
 
 import "common.proto";
 
