@@ -18,7 +18,6 @@ message BinaryLoadStats {
 message TOFStats {
     required SensorValidity distance_valid = 1;
     required float tank_fluid_volume_L = 2;
-    required float distance_m = 3;
 }
 
 message PumpTankStats {
