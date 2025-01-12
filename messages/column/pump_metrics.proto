@@ -15,8 +15,17 @@ message BinaryLoadStats {
     required bool faulted = 4;
 }
 
+message TOFStats {
+    required SensorValidity distance_valid = 1;
+    required float tank_fluid_volume_L = 2;
+    required float distance_m = 3;
+}
+
 message PumpTankStats {
     required BinaryLoadStats primary_pump = 1;
     required BinaryLoadStats secondary_pump = 2;
     required BinaryLoadStats water_valve = 3;
+
+    required TOFStats solution_reservoir_TOF = 4;
+    required TOFStats feed_reservoir_TOF = 5;
 }
