@@ -1,0 +1,13 @@
+syntax = "proto2";
+option go_package = "base-station/protobuf/generated/go/column";
+
+import "common.proto";
+
+enum PumpManagerState {
+    INIT = 0;
+    DEBUG = 1;
+}
+
+message PumpManagerInfo {
+    required PumpManagerState state = 1;
+}
