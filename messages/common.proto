@@ -12,6 +12,7 @@ enum MessageChannels {
     PUMP_STATS = 2;
     PUMP_MANAGER_INFO = 3;
     SET_PUMP_STATE_COMMAND = 4;
+    PUMP_UPDATE_SCHEDULE_COMMAND = 5;
 }
 
 message MessageHeader {
