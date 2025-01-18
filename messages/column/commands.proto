@@ -30,3 +30,13 @@ message SetPumpStateCommand {
     required PumpType SelectedPump  = 1;
     required PumpState State  = 2;
 }
+
+enum MixingOverrideState {
+    NO_OVERRIDE = 0;
+    OVERRIDE_VALVE_ON = 1;
+    OVERRIDE_VALVE_OFF = 2;
+}
+
+message SetMixingStateCommand {
+    required MixingOverrideState State = 1;
+}
