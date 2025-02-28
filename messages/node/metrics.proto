@@ -13,6 +13,23 @@ message HumiditySensor {
     required SensorValidity Validity = 2;
 }
 
+message LightSensorStats {
+    required float SensedPPFD = 1; // umol/(m^2*s)
+    required SensorValidity Validity = 2;
+}
+
+message GrowLightStats {
+    required float SetPPFD = 1;
+    required float Current = 2;
+    required SensorValidity CurrentValid = 3;
+}
+
+message GrowLightSectionStats {
+    required uint32 GrowLightIndex = 1;
+    required LightSensorStats LightSense = 2;
+    required GrowLightStats GrowLightMetrics = 3;
+}
+
 message NodeStats {
     required TemperatureSensor TempSense = 1;
     required HumiditySensor HumiditySense = 2;
