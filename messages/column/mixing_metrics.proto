@@ -2,6 +2,7 @@ syntax = "proto2";
 option go_package = "base-station/protobuf/generated/go/column";
 
 import "common.proto";
+import "column/binary_load.proto";
 
 message TDSSensor {
     required float TDSSensePPM = 1;
@@ -18,4 +19,5 @@ message pHSensor {
 message MixingTankStats {
     required TDSSensor TDSSense = 1;
     required pHSensor pHSense = 2;
+    required BinaryLoadStats MixingValveStats = 3;
 }
