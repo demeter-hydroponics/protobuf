@@ -1,0 +1,31 @@
+syntax = "proto2";
+option go_package = "base-station/protobuf/generated/go/panel";
+
+import "common.proto";
+import "column/commands.proto";
+
+
+message ControllerConfig {
+    required ControllerType Type = 1;
+    required string Id = 2;
+    required string Name = 3;
+}
+
+message NodeConfig {
+    required string Id = 1;
+}
+
+message ColumnConfig {
+    required string Id = 1;
+    required PumpState PrimaryPumpState = 2;
+    required PumpState SecondaryPumpState = 3;
+    required MixingOverrideState MixingState = 4;
+
+    repeated NodeConfig Nodes = 5;
+}
+
+message FarmConfig {
+    repeated ColumnConfig Columns = 1;
+    repeated NodeConfig UnsetNodes = 2;
+    map<string, ControllerConfig> Controllers = 3;
+}
