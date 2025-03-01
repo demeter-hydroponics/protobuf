@@ -2,3 +2,7 @@ syntax = "proto2";
 option go_package = "base-station/protobuf/generated/go/node";
 
 //import "common.proto";
+
+message SetPPFDReferenceCommand {
+    required float PPFD = 1;
+};

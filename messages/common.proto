@@ -13,6 +13,8 @@ enum MessageChannels {
     PUMP_MANAGER_INFO = 3;
     SET_PUMP_STATE_COMMAND = 4;
     PUMP_UPDATE_SCHEDULE_COMMAND = 5;
+    GROW_LIGHT_METRICS = 6;
+    GROW_LIGHT_PPFD_REFERENCE_COMMAND = 7;
 }
 
 message MessageHeader {
