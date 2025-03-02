@@ -13,5 +13,6 @@ protoc \
 --go_opt=paths=source_relative \
 common.proto \
 node/metrics.proto node/commands.proto \
-column/pump_metrics.proto column/mixing_metrics.proto column/pump_manager_info.proto column/commands.proto
+column/pump_metrics.proto column/mixing_metrics.proto column/pump_manager_info.proto column/commands.proto \
+panel/configs.proto
 
