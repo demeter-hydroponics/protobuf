@@ -16,4 +16,5 @@ message PumpTankStats {
 
     required WaterLevelStats solution_reservoir_level = 4;
     required WaterLevelStats feed_reservoir_level = 5;
+    required WaterLevelStats mixing_reservoir_level = 6;
 }
