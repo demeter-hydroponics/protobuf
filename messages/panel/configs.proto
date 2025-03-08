@@ -13,6 +13,7 @@ message ControllerConfig {
 
 message NodeConfig {
     required string Id = 1;
+    required float PPFD = 2;
 }
 
 message ColumnConfig {
