@@ -40,3 +40,7 @@ enum MixingOverrideState {
 message SetMixingStateCommand {
     required MixingOverrideState State = 1;
 }
+
+message SetWaterLevelControllerEnable {
+    required bool enable = 1;
+}
