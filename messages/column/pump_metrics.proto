@@ -9,6 +9,11 @@ message WaterLevelStats {
     required float tank_fluid_volume_L = 2;
 }
 
+message FlowRateStats {
+    required float flowRateLperM = 1;
+    required SensorValidity floatRateSensorValid = 2;
+}
+
 message PumpTankStats {
     required BinaryLoadStats primary_pump = 1;
     required BinaryLoadStats secondary_pump = 2;
@@ -17,4 +22,7 @@ message PumpTankStats {
     required WaterLevelStats solution_reservoir_level = 4;
     required WaterLevelStats feed_reservoir_level = 5;
     required WaterLevelStats mixing_reservoir_level = 6;
+
+    required FlowRateStats flow_rate_stats = 7;
+
 }
