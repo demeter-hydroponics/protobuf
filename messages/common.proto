@@ -21,6 +21,7 @@ enum MessageChannels {
     SET_MIXING_STATE_COMMAND = 6;
     GROW_LIGHT_METRICS = 7;
     GROW_LIGHT_PPFD_REFERENCE_COMMAND = 8;
+    SET_WATER_LEVEL_CONTROLLER_ENABLE = 9; // SetWaterLevelControllerEnable
 }
 
 message MessageHeader {
