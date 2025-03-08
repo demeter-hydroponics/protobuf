@@ -18,7 +18,6 @@ message PumpTankStats {
     required BinaryLoadStats primary_pump = 1;
     required BinaryLoadStats secondary_pump = 2;
     required BinaryLoadStats water_valve = 3;
-
     required WaterLevelStats solution_reservoir_level = 4;
     required WaterLevelStats feed_reservoir_level = 5;
     required WaterLevelStats mixing_reservoir_level = 6;
