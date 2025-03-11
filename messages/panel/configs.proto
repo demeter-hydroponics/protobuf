@@ -21,8 +21,9 @@ message ColumnConfig {
     required PumpState PrimaryPumpState = 2;
     required PumpState SecondaryPumpState = 3;
     required MixingOverrideState MixingState = 4;
+    required MixingOverrideState WaterLevelState = 5;
 
-    repeated NodeConfig Nodes = 5;
+    repeated NodeConfig Nodes = 6;
 }
 
 message FarmConfig {
